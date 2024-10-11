@@ -14,8 +14,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 
 const shopRoutes = require("./routes/shop");
+const adminRoutes = require("./routes/admin");
 
 app.use(shopRoutes);
+app.use("/admin", adminRoutes);
 
 app.use(errorController.get404);
 
